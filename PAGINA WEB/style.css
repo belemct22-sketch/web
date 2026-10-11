@@ -1,0 +1,506 @@
+/* =========================================================
+   ESTILOS GENERALES Y TEMA SYNTHWAVE / RETRO NEÓN 80s
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --bg-dark: #0b071e;
+  --neon-pink: #ff007f;
+  --neon-purple: #9d00ff;
+  --neon-cyan: #00f0ff;
+  --neon-red: #ff2a4b;
+  --card-bg: rgba(18, 10, 41, 0.85);
+  --border-neon: #d900ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Fondo con Rejilla Neón en Perspectiva (Synthwave Grid) */
+.grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    linear-gradient(rgba(255, 0, 127, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  box-shadow: inset 0 0 100px rgba(11, 7, 30, 0.9);
+}
+
+/* =========================================================
+   BARRA DE NAVEGACIÓN Y BÚSQUEDA
+   ========================================================= */
+
+.header-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 7, 30, 0.95);
+  border-bottom: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-cyan);
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logomenu{
+  width: 35px;
+  margin-left: 10px; 
+  margin-right: 5px;
+
+}
+
+.nav-brand {
+   width: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+  font-size: 1.1rem;
+  color: #dc0a7e;
+  text-shadow: white 0 0 10px var, 0 0 20px var white;
+  text-decoration: none;
+}
+
+.search-box {
+  flex: 1;
+  max-width: 350px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 20px;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 15px var(--neon-cyan);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.cart-btn {
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--neon-pink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =========================================================
+   BANNER PRINCIPAL (ARCADE TORRES)
+   ========================================================= */
+
+.hero-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border: 3px solid var(--neon-cyan);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px var(--neon-cyan), inset 0 0 15px var(--neon-cyan);
+  position: relative;
+  background: #000;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================================================
+   SECCIONES Y CONTENEDORES
+   ========================================================= */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+  margin: 40px 0 25px 0;
+  letter-spacing: 2px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* =========================================================
+   TARJETAS DE PRODUCTOS / ACCESORIOS (NEÓN CARD)
+   ========================================================= */
+
+.product-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border-neon);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 15px rgba(217, 0, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px var(--border-neon), 0 0 35px rgba(217, 0, 255, 0.6);
+}
+
+.product-image-container {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.product-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+}
+
+.product-description {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #d1d5db;
+  margin-bottom: 15px;
+  min-height: 55px;
+}
+
+.price-tag {
+  align-self: flex-end;
+  background: var(--neon-red);
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px var(--neon-red);
+  margin-bottom: 15px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-action {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 8px 0;
+  border-radius: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 12px var(--neon-cyan);
+}
+
+.btn-add {
+  border-color: #39ff14;
+  color: #39ff14;
+}
+
+.btn-add:hover {
+  background: #39ff14;
+  color: #000;
+  box-shadow: 0 0 12px #39ff14;
+}
+
+/* =========================================================
+   MODALES (DETALLES Y VENTANAS FLOTANTES)
+   ========================================================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(8px);
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg-dark);
+  border: 2px solid var(--neon-pink);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  padding: 25px;
+  box-shadow: 0 0 30px var(--neon-pink);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--neon-pink);
+}
+
+/* =========================================================
+   TOAST / NOTIFICACIONES
+   ========================================================= */
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3000;
+}
+
+.toast {
+  background: rgba(18, 10, 41, 0.95);
+  border: 1px solid #39ff14;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #39ff14;
+  margin-top: 10px;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(0, 240, 255, 0.3);
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   ESTILOS PARA EL APARTADO DE UBICACIÓN Y CONTACTO
+   ========================================================= */
+
+.contact-location-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.info-card {
+  background: rgba(18, 10, 41, 0.85);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  backdrop-filter: blur(8px);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px var(--neon-cyan);
+}
+
+.info-card h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.1rem;
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.info-card p, .info-card li {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Simulación de mapa retro */
+.map-placeholder {
+  width: 100%;
+  height: 180px;
+  background: #0b071e;
+  border: 1px dashed var(--neon-cyan);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  color: var(--neon-cyan);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+/* Formulario de contacto integrado */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--neon-pink);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px var(--neon-pink);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-send {
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--neon-pink);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-send:hover {
+  box-shadow: 0 0 20px var(--neon-pink);
+  transform: scale(1.02);
+}
+
+a{
+  color: #faf9f9;
+}
