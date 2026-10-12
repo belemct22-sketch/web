@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcade Torres - Catálogo de Máquinas Arcade y Accesorios</title>
+  <!-- Enlace al archivo CSS creado arriba -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fondo de cuadrícula Synthwave -->
+  <div class="grid-bg"></div>
+
+  <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
+  <header class="header-nav">
+        <img class="logomenu" src="LOGO.png" alt="logo">
+    <a href="#" class="nav-brand">ARCADE TORRES</a>
+
+
+    <!-- Buscador interactivo por tipo de máquina o accesorio -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar tipo de máquina o accesorio..." onkeyup="filterProducts()">
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#catalog">Catálogo</a></li>
+      <li><a href="#accessories">Accesorios</a></li>
+      <li><a href="#ubicacion">ubicacion</a></li>
+      <li><a href="#contacto">contacto</a></li>
+      
+
+    <button class="cart-btn" onclick="openCartModal()">
+      🛒 Carrito (<span id="cartCount">0</span>)
+    </button>
+  </header>
+
+  <!-- BANNER ENCABEZADO "ARCADE TORRES" -->
+  <div class="container">
+    <div class="hero-banner">
+      <!-- Reemplaza la ruta de la imagen por la tuya o mantén la URL -->
+      <img src="FONDO.png" alt="Fondo>
+
+      </div>
+    </div>
+
+
+  <main class="container">
+
+    <!-- SECCIÓN: MÁQUINAS ARCADE -->
+    <h2 class="section-title" id="catalog">CATÁLOGO</h2>
+    
+    <div class="product-grid" id="machinesGrid">
+      
+      <!-- Producto 1 -->
+      <div class="product-card" data-name="maquina arcade bartop multijuegos metal slug kof">
+        <div class="product-image-container">
+          <img src="1B.png" alt="1b">
+        </div>
+        <p class="product-description">Blaze Entertainment Evercade “Alpha Mega Dino Bartop” - Pre-Assembled Unit with Competition-Grade Arcade Controls + 8” High-Resolution IPS Screen.</p>
+        <span class="price-tag">$2,499 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Bartop Multijuegos', 2499)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Bartop Multijuegos', 'Incluye más de 3,000 juegos clásicos, pantalla LED de 19 pulgadas, palancas tipo Sanwa y botones iluminados.', '$8,500 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="product-card" data-name="maquina arcade multijuegos clasica pacman mario">
+        <div class="product-image-container">
+          <img src="2B.png" alt="2b">
+        </div>
+        <p class="product-description">“Super Street Fighter II” Micro Player Pro: 2 Games in 1, 6.75" Mini Arcade Machine, Fully playable Video Game Collectible.</p>
+        <span class="price-tag">$1,999 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Arcade Clásica Upright', 1999)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Arcade Clásica Upright', 'Gabinete completo de MDF de 15mm, monitor industrial de 22 pulgadas, sistema multijuegos con guardar partidas.', '$14,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="product-card" data-name="maquina arcade pedestal para tv">
+        <div class="product-image-container">
+          <img src="3B.png" alt="3b">
+        </div>
+        <p class="product-description">Miniconsola de juegos retro decorada con motivos de “Atari 50” y reproduciendo el clásico juego.</p>
+        <span class="price-tag">$2,299 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Pedestal Arcade HDMI', 2299)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Pedestal Arcade HDMI', 'Conexión HDMI instantánea, altavoces integrados, controles para 2 jugadores con trackball opcional.', '$6,800 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="product-card" data-name="maquina arcade mini de escritorio pac-man">
+        <div class="product-image-container">
+          <img src="4B.png" alt="4b">
+        </div>
+        <p class="product-description">“Pac-Man Joystick Player” : Consola de Juegos Retro con Licencia Oficial, 2 Modos de Juego Máquina Arcade clásica, Juego portátil.</p>
+        <span class="price-tag">$1,699 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 1699)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="product-card" data-name="maquina batop">
+        <div class="product-image-container">
+          <img src="2A.png" alt="2a">
+        </div>
+        <p class="product-description">“Máquina  "bartop" (diseñada para colocarse sobre una mesa o mostrador), decorada con la estética oficial del clásico videojuego “Street Fighter II de Capcom”.</p>
+        <span class="price-tag">$2,799 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2799)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="product-card" data-name="maquina pac man">
+        <div class="product-image-container">
+          <img src="3A.png" alt="3a">
+        </div>
+        <p class="product-description">“Máquina (diseñada para colocarse en superficies altas), personalizada con la estética oficial del legendario juego “Pac-Man de Bandai Namco”.</p>
+        <span class="price-tag">$2,999 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2999)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="product-card" data-name="maquina x-men">
+        <div class="product-image-container">
+          <img src="7A.png" alt="7a">
+        </div>
+        <p class="product-description">“Máquina réplica de sobremesa (bartop), decorada con el arte gráfico oficial del clásico videojuego de “X-Men de Konami”.</p>
+        <span class="price-tag">$2,999 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2999)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+            <!-- Producto 8 -->
+      <div class="product-card" data-name="mortal kombat">
+        <div class="product-image-container">
+          <img src="8A.png" alt="8a">
+        </div>
+        <p class="product-description">“Máquina réplica (bartop), personalizada con el arte gráfico del videojuego “Mortal Kombat (versión de 2011”, conocida como Mortal Kombat 9.)</p>
+        <span class="price-tag">$2,199 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2199)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+             <!-- Producto 9 -->
+      <div class="product-card" data-name="mortal kombat">
+        <div class="product-image-container">
+          <img src="1A.png" alt="1a">
+        </div>
+        <p class="product-description">“Máquina réplica compacta de sobremesa, decorada con el arte gráfico oficial de “Mortal Kombat II” y fabricada por la marca Arcade1Up."</p>
+        <span class="price-tag">$2,499 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2499)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+            <!-- Producto 10 -->
+      <div class="product-card" data-name="super street figther turbo">
+        <div class="product-image-container">
+          <img src="6A.png" alt="6a">
+        </div>
+        <p class="product-description">“Máquina bartop o mini de sobremesa, diseñada con el arte gráfico oficial de “Super Street Fighter II Turbo”.</p>
+        <span class="price-tag">$2,999 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2999)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+        <!-- Producto 11 -->
+      <div class="product-card" data-name="1up centipede">
+        <div class="product-image-container">
+          <img src="5A.png" alt="5a">
+        </div>
+        <p class="product-description">“Máquina doméstica “1Up Centipede” Gabinete vertical con arte lateral original del juego Centipede de Atari con diseño clásico de los años 80".</p>
+        <span class="price-tag">$2,499 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2499)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+         <!-- Producto 12 -->
+      <div class="product-card" data-name="starfighter">
+        <div class="product-image-container">
+          <img src="4A.png" alt="4a">
+        </div>
+        <p class="product-description">“Prototipo de mini máquina (conocido como modelo "Starfighter" diseñado por The Arcade Company) personalizado con la estética gráfica de Street Fighter IV."</p>
+        <span class="price-tag">$2,999 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Mini Arcade Pac-Man', 2999)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Mini Arcade Pac-Man', 'Diseño compacto de 10 pulgadas, pantalla a color de alta definición y marquesina iluminada.', '$3,200 MXN')">Detalles</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECCIÓN: ACCESORIOS -->
+    <h2 class="section-title" id="accessories">ACCESORIOS Y REFACCIONES</h2>
+
+    <div class="product-grid" id="accessoriesGrid">
+
+      <!-- Accesorio 1 -->
+      <div class="product-card" data-name="monedero electronico multimoneda arcade">
+        <div class="product-image-container">
+          <img src="1.png" alt="1">
+        </div>
+        <p class="product-description">Selector de monedas electrónico multiconeda “Modelo CH-926" o similar.</p>
+        <span class="price-tag">$475 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Monedero Electrónico', 475)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Monedero Electrónico', 'Acepta monedas de $1, $2, $5 y $10 MXN. Fácil programación mediante selector de pulsos.', '$450 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Accesorio 2 -->
+      <div class="product-card" data-name="joystick palanca arcade tipo sanwa">
+        <div class="product-image-container">
+          <img src="2.png" alt="2">
+        </div>
+        <p class="product-description">Palanca arcade modelo “Sanwa JLF-TP-8YT” con bola superior roja y base con conectores de microinterruptores integrados.</p>
+        <span class="price-tag">$285 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Palanca Joystick Pro', 285)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Palanca Joystick Pro', 'Mecanismo octagonal/cuadrado ajustable, resorte de alta durabilidad y bate intercambiable.', '$320 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Accesorio 3 -->
+      <div class="product-card" data-name="kit de botones led iluminados arcade">
+        <div class="product-image-container">
+          <img src="5.png" alt="5">
+        </div>
+        <p class="product-description">Disco de repuesto “Eagle” para monedero de máquina chiclera, diseñado comúnmente para monedas de 1 peso en máquinas expendedoras de dulces Eagle o Oak.</p>
+        <span class="price-tag">$554 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Kit Botones LED', 554)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Kit Botones LED', 'Incluye 10 botones de colores surtidos con focos LED de larga duración y rosca de ajuste.', '$550 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Accesorio 4 -->
+      <div class="product-card" data-name="llaves tibulares">
+        <div class="product-image-container">
+          <img src="6.png" alt="6">
+        </div>
+        <p class="product-description">Cerradura tubular de cilindro con dos “llaves tubulares”, diseñada comúnmente para la seguridad de máquinas expendedoras (vending) y gabinetes metálicos.</p>
+        <span class="price-tag">$720 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Pandora Box EX 3D', 720)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Pandora Box EX 3D', 'Soporta resolución HD, guardado de partidas, pausa y personalización de botones.', '$1,850 MXN')">Detalles</button>
+        </div>
+      </div>
+
+       <!-- Accesorio 5 -->
+      <div class="product-card" data-name="jamma de 56 pines">
+        <div class="product-image-container">
+          <img src="7.png" alt="7">
+        </div>
+        <p class="product-description">Arnés de cableado estándar “JAMMA de 56 pines 2x28 pines” para gabinetes y tarjetas de maquinitas arcade.</p>
+        <span class="price-tag">$207 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Pandora Box EX 3D', 207)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Pandora Box EX 3D', 'Soporta resolución HD, guardado de partidas, pausa y personalización de botones.', '$1,850 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      
+       <!-- Accesorio 6 -->
+      <div class="product-card" data-name="bl-0140">
+        <div class="product-image-container">
+          <img src="8.png" alt="8">
+        </div>
+        <p class="product-description"> candado de gancho protegido de hierro de la marca “BL-0140 de Weston Tools MIMS” , con cuerpo de hierro con acabado niquelado e incluye llaves anti-ganzúa.</p>
+        <span class="price-tag">$729 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Pandora Box EX 3D', 729)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Pandora Box EX 3D', 'Soporta resolución HD, guardado de partidas, pausa y personalización de botones.', '$1,850 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Accesorio 7 -->
+      <div class="product-card" data-name="microswitch">
+        <div class="product-image-container">
+          <img src="3.png" alt="3">
+        </div>
+        <p class="product-description">botones pulsadores tipo arcade con “Microswitch” de plástico blanco y rosca negra, intercambiables en colores como rojo y azul.</p>
+        <span class="price-tag">$590 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Pandora Box EX 3D', 590)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Pandora Box EX 3D', 'Soporta resolución HD, guardado de partidas, pausa y personalización de botones.', '$1,850 MXN')">Detalles</button>
+        </div>
+      </div>
+
+      <!-- Accesorio 8 -->
+      <div class="product-card" data-name="pbs-29">
+        <div class="product-image-container">
+          <img src="4.png" alt="4">
+        </div>
+        <p class="product-description">Botón Arcade Rojo 2,3cm For Arcade “Jukebox Pbs-29"</p>
+        <span class="price-tag">$197 MXN</span>
+        <div class="card-actions">
+          <button class="btn-action btn-add" onclick="addToCart('Pandora Box EX 3D', 197)">Añadir</button>
+          <button class="btn-action" onclick="openDetailsModal('Pandora Box EX 3D', 'Soporta resolución HD, guardado de partidas, pausa y personalización de botones.', '$1,850 MXN')">Detalles</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Arcade Torres - Todos los derechos reservados. Página de catálogo Retro Synthwave.</p>
+  </footer>
+
+  <!-- CONTENEDOR DE MODALES -->
+  <div class="modal-overlay" id="genericModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('genericModal')">✕</button>
+      <h3 id="modalTitle" style="font-family: 'Press Start 2P'; font-size: 1rem; color: var(--neon-cyan); margin-bottom: 15px;">Título</h3>
+      <div id="modalBody" style="font-size: 1rem; line-height: 1.5; color: #e2e8f0; margin-bottom: 20px;">
+        Contenido del modal...
+      </div>
+      <div id="modalFooter" style="text-align: right;">
+        <span id="modalPrice" class="price-tag" style="display: none;">$0 MXN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICACIONES (TOAST) -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- SECCIÓN: UBICACIÓN Y CONTACTO -->
+<section class="contact-location-section" id="contacto-ubicacion">
+  <h2 class="section-title">UBICACIÓN Y CONTACTO</h2>
+  
+  <div class="info-container">
+    
+    <!-- Tarjeta de Ubicación -->
+    <div class="info-card">
+      <h3 id="ubicacion">📍 Nuestra Ubicación</h3>
+
+      <ul>
+        <li><strong>Dirección:</strong> Av. Principal de Arcades s/n , San francisco Zacacalco, Ciudad de México.</li>
+        <li><strong>Horarios:</strong> Lunes a Sábado de 12:00 PM a 10:00 PM.</li>
+      </ul>
+      
+      <!-- Simulación de Mapa Estilo Retro -->
+      <div class="map-placeholder">
+        <span>🎮 [ MAPA INTERACTIVO ARCADE TORRES ] 🎮</span>
+        <a href="">Haz click para abrir goglee maps</a>
+      </div>
+    </div>
+
+    <!-- Tarjeta de Contacto / Formulario -->
+    <div class="info-card">
+      <h3 id="contacto">📞 Contáctanos</h3>
+      <p>¿Tienes dudas sobre algún modelo o requieres un diseño especial para tu sala de juegos? Escríbenos:</p>
+      
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');">
+        <input type="text" placeholder="Tu Nombre" required>
+        <input type="email" placeholder="Tu Correo Electrónico" required>
+        <textarea placeholder="Escribe tu mensaje o duda sobre alguna máquina..." required></textarea>
+        <button type="submit" class="btn-send">Enviar Mensaje</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
